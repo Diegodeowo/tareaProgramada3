@@ -5,16 +5,15 @@
 
 using namespace std;
 
-class Producto {
-
-    protected:
-        string ID_Producto = "";
-        string nombreProducto = "";
-        int existencias = 0;
+class Producto 
+{
+    int ID;
+    char nombreProducto[20];
+    int existenciaProducto;
 
     public:
-        virtual ~Producto();
-        virtual int AgregarProducto() = 0;
+        Producto(int ID, string nombreProducto, int existenciaProducto);
+        string productoToString();
 };
 
 #endif

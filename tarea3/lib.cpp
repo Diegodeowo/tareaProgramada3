@@ -5,24 +5,22 @@
 using namespace std;
 
 
-string Lib::consultarNombre(string nombre)
+string Lib::consultarNombre(char nombre[15])
 {
-    return nombre;
+    return string {nombre};
 }
 
-string Lib::consultarDireccionWeb(string nombre)
+string Lib::consultarDireccionWeb(char direccionWeb[24])
 {
-    return "https://"+nombre+".com";
+    return string {direccionWeb};
 }
 
-string Lib::consultarDireccion(string direccion)
+string Lib::consultarDireccionFisica(char direccionFisica[24])
 {
-    return direccion;
+    return string {direccionFisica};
 }
 
-string Lib::consultarTelefono(string telefono)
+string Lib::consultarTelefono(char telefono[8])
 {
-    return telefono;
+    return string {telefono};
 }
-
-
