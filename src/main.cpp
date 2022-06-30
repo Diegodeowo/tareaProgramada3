@@ -9,10 +9,10 @@ using namespace std;
 
 int main() {
 
-    Producto *producto1 = new Producto(1, "Carro",20);
-    Producto *producto2 = new Producto(2, "PC",25);
-    Producto *producto3 = new Producto(3, "BB",22);
-    Producto *producto4 = new Producto(4, "IDK",2022);
+    Producto *producto1 = new Producto(1,"Carro",20);
+    Producto *producto2 = new Producto(2,"PC",25);
+    Producto *producto3 = new Producto(3,"BB",22);
+    Producto *producto4 = new Producto(4,"IDK",20);
 
     InventarioTienda *inventarioTienda = new InventarioTienda();
     inventarioTienda->AgregarProducto(producto1);
@@ -25,7 +25,7 @@ int main() {
 
     if (!archivoSalida.is_open())
     {
-        cerr << "No se pudo abrir archivo planilla.dat para escribir los datos";
+        cerr << "ERROR AL ABRIR EL ARCHIVO.DAT";
         return -1;
     }
 
