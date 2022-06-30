@@ -18,11 +18,6 @@ using namespace std;
         string consultarDireccionFisica(char direccionFisica[24]);
         string consultarTelefono(char telefono[8]);
 
-
-        
-
-
-
     };
 
 
