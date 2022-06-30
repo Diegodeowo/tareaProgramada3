@@ -1,5 +1,5 @@
-#ifndef TIENDA_H
-#define TIENDA_H
+#ifndef INVENTARIOTIENDA_H
+#define INVENTARIOTIENDA_H
 
 #include "producto.h"
 #include <vector>
@@ -7,13 +7,27 @@
 class InventarioTienda
 {
     
-    vector<Producto *> inventarioTienda;
 
     public:
-    InventarioTienda();
+    vector<Producto *> tiendaInventario;
 
-    void agregarProducto(Producto *p1);
+    InventarioTienda();
+    ~InventarioTienda();
+
+
+    void AgregarProducto(Producto *p1);
     string getInventarioTienda();
+
+    void GuardarEnStreamBinario(ostream *streamSalida);
+
+
+
+
+
+
+
+
+
 
 };
 

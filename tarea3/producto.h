@@ -8,12 +8,17 @@ using namespace std;
 class Producto 
 {
     int ID;
-    char nombreProducto[20];
     int existenciaProducto;
+    char nombreProducto[20];
 
     public:
         Producto(int ID, string nombreProducto, int existenciaProducto);
-        string productoToString();
+        Producto();
+
+        
+        // string productoToString();
+        friend ostream& operator << (ostream &o, const Producto *producto);
+
 };
 
 #endif
