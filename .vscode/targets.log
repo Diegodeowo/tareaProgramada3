@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Mon Jul  4 15:36:34 2022
+# Make data base, printed on Mon Jul  4 15:56:16 2022
 
 # Variables
 
@@ -228,7 +227,6 @@ NO_AT_BRIDGE = 1
 # environment
 QT_ACCESSIBILITY = 1
 # default
- 
 MAKEFILES := 
 # environment
 SNAP_COOKIE = AGedOztXdVRIwMTd3v5mpt4o1n4bQ1_D2oNTl83NfGwk-lVzbf1c
@@ -244,6 +242,7 @@ SNAP_NAME = code
 LC_ALL = C
 # environment
 DBUS_STARTER_BUS_TYPE = session
+ 
 # environment
 GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/c7c9a58d_7689_4cb7_9372_8cf249031be0
 # automatic
@@ -342,7 +341,7 @@ test:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 20):
+#  recipe to execute (from 'makefile', line 18):
 	mkdir -p obj
 	mkdir -p bin
 	g++ $(FLAGS) src/lib.cpp -o obj/lib.o
@@ -353,10 +352,9 @@ test:
 	g++ -g -o bin/tests obj/lib.o obj/lib_test.o obj/producto.o obj/inventarioTienda.o -lgtest -lgtest_main -lpthread
 
 # Not a target:
- 
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-04 15:36:21.339519427
+#  Last modified 2022-07-04 15:56:15.796011884
 #  File has been updated.
 #  Successfully updated.
 
@@ -370,7 +368,7 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 42):
+#  recipe to execute (from 'makefile', line 30):
 	rm -Rf bin
 	rm *.dat
 
@@ -388,6 +386,7 @@ clean:
 # strcache performance: lookups = 27 / hit rate = 33%
 # hash-table stats:
 # Load=18/8192=0%, Rehash=0, Collisions=1/27=4%
-# Finished Make data base on Mon Jul  4 15:36:34 2022
+# Finished Make data base on Mon Jul  4 15:56:16 2022
+ 
 
  
