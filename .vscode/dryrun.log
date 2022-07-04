@@ -1,9 +1,12 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/diego/Desktop/tareaProgramada3'
+mkdir -p obj
 mkdir -p bin
-g++ -g -c --std=c++17 src/main.cpp -o bin/main.o
-g++ -g -c --std=c++17 src/producto.cpp -o bin/producto.o
-g++ -g -c --std=c++17 src/inventarioTienda.cpp -o bin/inventarioTienda.o
-g++ -o bin/ejemplo17 bin/main.o bin/producto.o bin/inventarioTienda.o
+g++ -g -c --std=c++17 src/lib.cpp -o obj/lib.o
+g++ -g -c --std=c++17 src/producto.cpp -o obj/producto.o
+g++ -g -c --std=c++17 src/inventarioTienda.cpp -o obj/inventarioTienda.o
+g++ -shared -o bin/libreria.so obj/lib.o
+mkdir -p bin/include
+cp src/lib.h src/producto.h src/inventarioTienda.h ./bin/include
 make: Leaving directory '/home/diego/Desktop/tareaProgramada3'
  

@@ -10,13 +10,18 @@ using namespace std;
 
     class Lib
     {
+        
+        char nombre[15];
+        char direccionWeb[24];
+        char direccionFisica[24];
+        char telefono[8];
 
         public:
 
-        string consultarNombre(char nombre[15]);
-        string consultarDireccionWeb(char direccionWeb[24]);
-        string consultarDireccionFisica(char direccionFisica[24]);
-        string consultarTelefono(char telefono[8]);
+            string ConsultarNombre(string nombre);
+            string ConsultarDireccionWeb(string direccionWeb);
+            string ConsultarDireccionFisica(string direccionFisica);
+            string ConsultarTelefono(string telefono);
 
     };
 
