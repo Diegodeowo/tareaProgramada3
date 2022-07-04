@@ -6,8 +6,6 @@
 
 class InventarioTienda
 {
-    
-
     public:
     vector<Producto *> tiendaInventario;
 
@@ -19,15 +17,6 @@ class InventarioTienda
     string getInventarioTienda();
 
     void GuardarEnStreamBinario(ostream *streamSalida);
-
-
-
-
-
-
-
-
-
 
 };
 

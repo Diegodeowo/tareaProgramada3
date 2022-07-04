@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
@@ -387,3 +388,9 @@ clean:
 # Finished Make data base on Mon Jul  4 15:58:57 2022
 
  
+=======
+make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+"make.exe" no se reconoce como un comando interno o externo,
+programa o archivo por lotes ejecutable.
+
+>>>>>>> 4bda9288f17d94937b2a62b135c0efafcdb53aa2
