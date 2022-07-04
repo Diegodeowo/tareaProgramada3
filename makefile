@@ -14,7 +14,7 @@ all:
 	mkdir -p bin/include
 	cp src/lib.h src/producto.h src/inventarioTienda.h ./bin/include
 
-test:
+test1:
 	mkdir -p obj
 	mkdir -p bin
 

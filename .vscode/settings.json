@@ -2,6 +2,7 @@
     "makefile.extensionOutputFolder": "./.vscode",
     "files.associations": {
         "*.tcc": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "new": "cpp"
     }
 }

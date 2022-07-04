@@ -20,6 +20,8 @@ int main() {
     inventarioTienda->AgregarProducto(producto3);
     inventarioTienda->AgregarProducto(producto4);
 
+    inventarioTienda->getInventarioTienda();
+
     ofstream archivoSalida;
     archivoSalida.open("inventario.dat", ios::out|ios::binary);
 
@@ -34,24 +36,4 @@ int main() {
     archivoSalida.close();
 
     delete inventarioTienda;
-
-    // Ejemplo de leer una planilla desde un archivo binario
-    // ifstream archivoEntrada;
-    // archivoEntrada.open("planilla.dat", ios::in|ios::binary);
-
-    // if (!archivoEntrada.is_open())
-    // {
-    //     cerr << "No se pudo abrir archivo planilla.dat para leer los datos";
-    //     return -1;
-    // }
-    
-    // Planilla *planilla = new Planilla();
-
-    // planilla->CargarDesdeStreamBinario(&archivoEntrada);
-
-    // cout << planilla;
-
-    // delete planilla;
-
-    // archivoEntrada.close();
 }
