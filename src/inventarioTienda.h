@@ -3,6 +3,8 @@
 
 #include "producto.h"
 #include <vector>
+#include <fstream>
+
 
 class InventarioTienda
 {
@@ -12,10 +14,7 @@ class InventarioTienda
     InventarioTienda();
     ~InventarioTienda();
 
-
     void AgregarProducto(Producto *p1);
-    string getInventarioTienda();
-
     void GuardarEnStreamBinario(ostream *streamSalida);
 
 };

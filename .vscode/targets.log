@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jul  4 16:38:52 2022
+# Make data base, printed on Mon Jul  4 18:18:30 2022
 
 # Variables
 
@@ -185,7 +185,7 @@ SHLVL = 1
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-8493f35d-51b9-4e72-9906-490b2934a759.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-694d2b6d-b1cf-41e9-8790-1f22df4b879a.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -243,11 +243,11 @@ LC_ALL = C
 # environment
 DBUS_STARTER_BUS_TYPE = session
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/988021bb_ea78_4210_859c_c54d46254033
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/876b42e7_924f_4201_9dcf_8a471f53ce53
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.1785
+GNOME_TERMINAL_SERVICE = :1.3168
 # default
 SUFFIXES := 
 # makefile (from 'makefile', line 1)
@@ -283,9 +283,10 @@ DBUS_STARTER_ADDRESS = unix:path=/run/user/1000/bus,guid=8dbeb0d2c8fdc6403f8137a
 
 # Directories
 
-# . (device 2054, inode 606844): 10 files, no impossibilities.
+ 
+# . (device 2054, inode 606844): 12 files, no impossibilities.
 
-# 10 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -298,7 +299,6 @@ all:
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: ''
 #  File does not exist.
- 
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -340,7 +340,7 @@ all:
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-04 16:38:29.079969205
+#  Last modified 2022-07-04 17:23:44.764894844
 #  File has been updated.
 #  Successfully updated.
 
@@ -358,6 +358,17 @@ test1:
 	g++ $(FLAGS) tests/lib_test.cpp -o obj/lib_test.o
 	g++ -g -o bin/tests obj/lib.o obj/lib_test.o obj/producto.o obj/inventarioTienda.o -lgtest -lgtest_main -lpthread
 
+compile:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 30):
+	mkdir -p bin
+	g++ $(FLAGS) src/main.cpp -o bin/main.o
+	g++ $(FLAGS) src/producto.cpp -o bin/producto.o
+	g++ $(FLAGS) src/inventarioTienda.cpp -o bin/inventarioTienda.o
+	g++ -o bin/a bin/main.o bin/producto.o bin/inventarioTienda.o
+
 # Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
@@ -368,24 +379,24 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 30):
+#  recipe to execute (from 'makefile', line 38):
 	rm -Rf bin
 	rm *.dat
 
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/18=0%
+# Load=7/1024=1%, Rehash=0, Collisions=0/19=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 17 / storage = 129 B / avg = 7 B
-# current buf: size = 8162 B / used = 129 B / count = 17 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 20 / storage = 156 B / avg = 7 B
+# current buf: size = 8162 B / used = 156 B / count = 20 / avg = 7 B
 
-# strcache performance: lookups = 26 / hit rate = 34%
+# strcache performance: lookups = 30 / hit rate = 33%
 # hash-table stats:
-# Load=17/8192=0%, Rehash=0, Collisions=1/26=4%
-# Finished Make data base on Mon Jul  4 16:38:52 2022
+# Load=20/8192=0%, Rehash=0, Collisions=1/30=3%
+# Finished Make data base on Mon Jul  4 18:18:30 2022
 
  

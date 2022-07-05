@@ -5,8 +5,8 @@
 
 using namespace std;
 
-class Producto 
-{
+class Producto{
+    
     int ID;
     int existenciaProducto;
     char nombreProducto[20];
@@ -15,8 +15,6 @@ class Producto
         Producto(int ID, string nombreProducto, int existenciaProducto);
         Producto();
 
-        
-        // string productoToString();
         friend ostream& operator << (ostream &o, const Producto *producto);
 
 };

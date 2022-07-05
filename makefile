@@ -26,6 +26,14 @@ test1:
 
 	g++ -g -o bin/tests obj/lib.o obj/lib_test.o obj/producto.o obj/inventarioTienda.o -lgtest -lgtest_main -lpthread
 
+compile:
+	mkdir -p bin
+	g++ $(FLAGS) src/main.cpp -o bin/main.o
+	g++ $(FLAGS) src/producto.cpp -o bin/producto.o
+	g++ $(FLAGS) src/inventarioTienda.cpp -o bin/inventarioTienda.o
+	g++ -o bin/a bin/main.o bin/producto.o bin/inventarioTienda.o
+
+
 clean:
 	rm -Rf bin
 	rm *.dat

@@ -4,25 +4,23 @@
 #include <string>
 #include "inventarioTienda.h"
 #include "producto.h"
+#include <fstream>
 
 using namespace std;
 
-    class Lib
-    {
-        
-        char nombre[15];
-        char direccionWeb[24];
-        char direccionFisica[24];
-        char telefono[8];
 
-        public:
+class Lib{
+    char nombre[15];
+    char direccionWeb[24];
+    char direccionFisica[24];
+    char telefono[8];
 
-            string ConsultarNombre(string nombre);
-            string ConsultarDireccionWeb(string direccionWeb);
-            string ConsultarDireccionFisica(string direccionFisica);
-            string ConsultarTelefono(string telefono);
-
-    };
-
+    public:
+        string ConsultarNombre(string nombre);
+        string ConsultarDireccionWeb(string direccionWeb);
+        string ConsultarDireccionFisica(string direccionFisica);
+        string ConsultarTelefono(string telefono);
+    
+};
 
 #endif  
