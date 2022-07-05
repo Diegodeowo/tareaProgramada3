@@ -13,10 +13,9 @@ using namespace std;
 
 int main() {
 
-    try
-    {
+    try{
     Producto *producto1 = new Producto(1,"Teclado",20);
-    Producto *producto2 = new Producto(2,"Mouse",300);
+    Producto *producto2 = new Producto(2,"Mouse",10);
     Producto *producto3 = new Producto(3,"Monitor",22);
     Producto *producto4 = new Producto(4,"Microfono",0);
 
@@ -35,6 +34,7 @@ int main() {
         cerr << "ERROR AL ABRIR EL ARCHIVO.DAT";
         return -1;
     }
+
 
     inventarioTienda->GuardarEnStreamBinario(&archivoSalida);
 
@@ -58,5 +58,17 @@ int main() {
     catch(const std::exception& e)
     {
         std::cerr << "Error al ejecutar el programa. " << e.what() << '\n';
+    }
+
+    {
+        fstream myFile;
+        myFile.open("inventario.dat", ios::in); 
+        if (myFile.is_open()){
+            string line;
+            while (getline(myFile,line)){
+                cout << line << endl;
+            }
+            myFile.close();
+        } 
     }
 }

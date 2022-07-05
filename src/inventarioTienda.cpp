@@ -1,5 +1,6 @@
 #include <iostream>
 #include "inventarioTienda.h"
+#include "producto.h"
 
 InventarioTienda::InventarioTienda(){
     
@@ -16,7 +17,7 @@ void InventarioTienda::AgregarProducto(Producto *p1){
 }
 
 void InventarioTienda::GuardarEnStreamBinario(ostream *streamSalida){
-    for (Producto *producto : this->tiendaInventario)
+    for (Producto *producto:this->tiendaInventario)
     {
         streamSalida->write((char *)producto, sizeof(Producto));
     }
@@ -33,3 +34,4 @@ ostream& operator << (ostream &o, const InventarioTienda *inventarioTienda){
     
     return o;
 }
+
