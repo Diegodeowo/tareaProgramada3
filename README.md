@@ -35,7 +35,7 @@ make test
 
 | Nombre del campo | Tipo | Tamaño  |
 |---|---|---|
-| ID | Entero |  |
+| ID | int |  |
 | Nombre | String  | 20  |
 | Existencia  | int|  |
 
