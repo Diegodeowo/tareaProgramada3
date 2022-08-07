@@ -1,34 +1,72 @@
-#ifndef PRODUCTO_H
-#define PRODUCTO_H
-
-#include <iostream>
+#include "producto.h"
+#include "./Excepciones/excepcionesProducto.h"
 #include <string>
-#include <cstring>
 
-using namespace std;
+Producto::Producto(int idProducto, string nombreProducto, int Existencias){
 
-class Producto{
-    private:
-        
-        int idProducto;
-        char nombreProducto[20];
-        int Existencias;
+    if (nombreProducto.length() == 0 || nombreProducto.length() > 20){
+        throw ExcepcionNombreProducto();
+    }
+    else if (idProducto <= 0){
+        throw ExcepcionNegativo();
+    }
+    else if (Existencias < 0){
+        throw ExcepcionDisponibilidad();
 
-    public:
+    }
+    else {
+        this->idProducto = idProducto;
+        strcpy(this->nombreProducto, nombreProducto.c_str());
+        this->Existencias = Existencias;
+    }
+}
 
-        Producto(int idProducto, string nombreProducto, int Existencias);
-        Producto();
-        ~Producto();
+Producto::Producto(){
+    this->idProducto = 0;
+    strcpy(this->nombreProducto, "");
+    this->Existencias = 0;
+}
 
-        int GetID();
-        string GetNombre();
-        int GetExistencias(); 
+int Producto::GetID()
+{
+    return this->idProducto;
+}
+int Producto::GetExistencias()
+{
+    return this->Existencias;
+}
+
+string Producto::GetNombre()
+{
+    return this->nombreProducto;
+}
 
 
-        void ModificarNombre(string nuevoNombre);
-        void ModificarExistencias(int existencias);
+Producto::~Producto(){
 
-        friend ostream& operator << (ostream &streamSalida, const Producto *producto);
-};
+}
 
-#endif
+void Producto::ModificarNombre(string nuevoNombre){
+    if (nuevoNombre.length() == 0 || nuevoNombre.length() > 20){
+        throw ExcepcionNombreProducto();
+    }
+    strcpy(this->nombreProducto, nuevoNombre.c_str());
+}
+void Producto::ModificarExistencias(int existencias)
+{
+    this->Existencias = existencias;
+}
+
+ostream& operator << (ostream &streamSalida, const Producto *producto){
+    streamSalida 
+    << " [ "
+    << producto->idProducto 
+    << " ] "
+    << " "
+    << producto->nombreProducto 
+    << " "
+    << " < Disponibles: "
+    << producto->Existencias
+    << " > ";
+    return streamSalida;
+}

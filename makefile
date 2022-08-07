@@ -18,13 +18,8 @@ test1:
 	g++ $(FLAGS) src/tienda.cpp -o obj/tienda.o
 	g++ $(FLAGS) src/producto.cpp -o obj/producto.o
 	g++ $(FLAGS) tests/test_producto.cpp -o bin/test_producto.o
-# g++ $(FLAGS) tests/test_tienda.cpp -o bin/test_tienda.o
 
-	g++ -g -o bin/tests obj/producto.o bin/test_producto.o -lgtest -lgtest_main -lpthread
-
-
-
-# bin/test_tienda.o bin/tienda.o
+	g++ -g -o bin/tests obj/producto.o bin/test_producto.o bin/test_tienda.o bin/tienda.o -lgtest -lgtest_main -lpthread
 
 clean:
 	rm -Rf bin
