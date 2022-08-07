@@ -9,7 +9,7 @@ all:
 	g++ $(FLAGS) src/producto.cpp -o obj/producto.o
 
 	mkdir -p bin/include
-	cp src/lib.h src/producto.h src/tienda.h ./bin/include
+	cp src/producto.h src/tienda.h ./bin/include
 
 test1:
 	mkdir -p obj
@@ -18,9 +18,13 @@ test1:
 	g++ $(FLAGS) src/tienda.cpp -o obj/tienda.o
 	g++ $(FLAGS) src/producto.cpp -o obj/producto.o
 	g++ $(FLAGS) tests/test_producto.cpp -o bin/test_producto.o
-	g++ $(FLAGS) tests/test_tienda.cpp -o bin/test_tienda.o
+# g++ $(FLAGS) tests/test_tienda.cpp -o bin/test_tienda.o
 
-	g++ -g -o bin/tests bin/producto.o bin/test_producto.o bin/test_tienda.o bin/tienda.o -lgtest -lgtest_main -lpthread
+	g++ -g -o bin/tests obj/producto.o bin/test_producto.o -lgtest -lgtest_main -lpthread
+
+
+
+# bin/test_tienda.o bin/tienda.o
 
 clean:
 	rm -Rf bin

@@ -20,7 +20,9 @@ class Producto{
         Producto();
         ~Producto();
 
-        int GetID();
+        int GetID(); 
+        int GetExistencias(); 
+        string GetNombre();
         void ModificarNombre(string nuevoNombre);
         void ModificarExistencias(int existencias);
 

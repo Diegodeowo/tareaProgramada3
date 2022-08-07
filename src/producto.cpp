@@ -1,63 +1,34 @@
-#include "producto.h"
-#include "./excepcionesProducto.h"
+#ifndef PRODUCTO_H
+#define PRODUCTO_H
+
+#include <iostream>
 #include <string>
+#include <cstring>
 
-Producto::Producto(int idProducto, string nombreProducto, int Existencias){
+using namespace std;
 
-    if (nombreProducto.length() == 0 || nombreProducto.length() > 20){
-        throw ExcepcionNombreProducto();
-    }
-    else if (idProducto <= 0){
-        throw ExcepcionNegativo();
-    }
-    else if (Existencias < 0){
-        throw ExcepcionDisponibilidad();
+class Producto{
+    private:
+        
+        int idProducto;
+        char nombreProducto[20];
+        int Existencias;
 
-    }
-    else {
-        this->idProducto = idProducto;
-        strcpy(this->nombreProducto, nombreProducto.c_str());
-        this->Existencias = Existencias;
-    }
-}
+    public:
 
-Producto::Producto(){
-    this->idProducto = 0;
-    strcpy(this->nombreProducto, "");
-    this->Existencias = 0;
-}
+        Producto(int idProducto, string nombreProducto, int Existencias);
+        Producto();
+        ~Producto();
 
-int Producto::GetID()
-{
-    return this->idProducto;
-}
+        int GetID();
+        string GetNombre();
+        int GetExistencias(); 
 
 
-Producto::~Producto(){
+        void ModificarNombre(string nuevoNombre);
+        void ModificarExistencias(int existencias);
 
-}
+        friend ostream& operator << (ostream &streamSalida, const Producto *producto);
+};
 
-void Producto::ModificarNombre(string nuevoNombre){
-    if (nuevoNombre.length() == 0 || nuevoNombre.length() > 20){
-        throw ExcepcionNombreProducto();
-    }
-    strcpy(this->nombreProducto, nuevoNombre.c_str());
-}
-void Producto::ModificarExistencias(int existencias)
-{
-    this->Existencias = existencias;
-}
-
-ostream& operator << (ostream &streamSalida, const Producto *producto){
-    streamSalida 
-    << " [ "
-    << producto->idProducto 
-    << " ] "
-    << " "
-    << producto->nombreProducto 
-    << " "
-    << " < Disponibles: "
-    << producto->Existencias
-    << " > ";
-    return streamSalida;
-}
+#endif
