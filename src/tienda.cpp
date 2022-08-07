@@ -1,6 +1,6 @@
 #include "tienda.h"
 #include <sstream>
-#include "./excepcionesTienda.h"
+#include "./Excepciones/excepcionesTienda.h"
 
 using namespace std;
 
