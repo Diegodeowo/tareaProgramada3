@@ -1,26 +1,30 @@
 #ifndef PRODUCTO_H
 #define PRODUCTO_H
 
+#include <iostream>
 #include <string>
+#include <cstring>
 
 using namespace std;
 
 class Producto{
-    
+    private:
+        
+        int idProducto;
+        char nombreProducto[20];
+        int Existencias;
 
-    int ID;
-    int existenciaProducto;
-    char nombreProducto[20];
-    
     public:
 
-        Producto(int ID, string nombreProducto, int existenciaProducto);
-        void GuardarEnStreamBinario(ostream *streamSalida);    
-
+        Producto(int idProducto, string nombreProducto, int Existencias);
         Producto();
+        ~Producto();
 
-        friend ostream& operator << (ostream &o, const Producto *producto);
+        int GetID();
+        void ModificarNombre(string nuevoNombre);
+        void ModificarExistencias(int existencias);
 
+        friend ostream& operator << (ostream &streamSalida, const Producto *producto);
 };
 
 #endif
